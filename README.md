@@ -64,9 +64,24 @@
 - To not display commented out codeblocks inside vagarantfile:
   - vagrant init hashicorp/precise32 --minimal
 - After modifying the vagrantfile, run:
+
   - vagrant reload
   - vagrant provision
   - vagrant ssh
     - service nginx status
     - wget -qO- localhost
       - NB: q=keep process quiet, O- = write to stdout
+
+  **Sharing and versioning website files**
+
+  - Dump the content of default nginx config:
+    - head -30 /etc/nginx/sites-enabled/default
+  - Share nginx files between host and guest
+    - cp -r /usr/share/nginx/www /vagrant/www
+  - For nginx to start loading file from new www folder:
+    - get rid of default www folder and use symbolic link with aliases
+    - Create symbolic link pointing at new www folder:
+      - sudo ln -s /vagrant/www /usr/share/nginx/www
+  - To apply changes for new provisioning
+    - vagrant destroy -f
+    - vagrant up

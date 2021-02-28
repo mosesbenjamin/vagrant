@@ -18,7 +18,7 @@
   - To play around
     - uname -a
 
-### To disable vagrant from running headless
+#### To disable vagrant from running headless
 
 - exit the ssh sesion
   - exit
@@ -29,7 +29,7 @@
   - vagrant reload
 - vagrant is the default username and password
 
-### Sharing files
+#### Sharing files
 
 - vagrant ssh
 - Default location where vagrant shares files
@@ -37,21 +37,27 @@
   - ls
   - cat filename
 
-### Suspending the VM
+#### Suspending the VM
 
 - exit the VM
 - vagrant suspend
 - Revive environment
   vagrant resume
 
-### Halting the VM
+#### Halting the VM
 
 - vagrant halt
 - To resume the VM
   - vagrant up
 
-###
+#### Destroying the VM
 
 - First list all vms
   - vboxmanage list vms
 - vagrant destroy
+
+####
+
+- mkdir nginx
+- cd; run
+  - vagrant init hashicorp/precise32

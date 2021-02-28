@@ -56,8 +56,17 @@
   - vboxmanage list vms
 - vagrant destroy
 
-####
+#### Web development environment and vagrant fundamentals
 
 - mkdir nginx
 - cd; run
   - vagrant init hashicorp/precise32
+- To not display commented out codeblocks inside vagarantfile:
+  - vagrant init hashicorp/precise32 --minimal
+- After modifying the vagrantfile, run:
+  - vagrant reload
+  - vagrant provision
+  - vagrant ssh
+    - service nginx status
+    - wget -qO- localhost
+      - NB: q=keep process quiet, O- = write to stdout
